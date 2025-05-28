@@ -10,7 +10,15 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+  ...compat.config({
+    extends: ("next/core-web-vitals", "next/typescript"),
+    rules: {
+      "react/react-in-jsx-scope": "off", // Next.js does not require React to be in scope
+      "no-unused-vars": ["warn", { varsIgnorePattern: "^_", argsIgnorePattern: "^_" }],
+      "import/no-anonymous-default-export": "off", // Allow anonymous default exports
+      "react/no-unescaped-entities": "off", // Allow unescaped entities in JSX
+    },
+  }),
 ];
 
 export default eslintConfig;
