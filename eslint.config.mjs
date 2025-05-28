@@ -11,7 +11,7 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.config({
-    extends: ("next/core-web-vitals", "next/typescript"),
+    extends: ["next/core-web-vitals", "next/typescript"], 
     rules: {
       "react/no-unescaped-entities": "off", // Allow unescaped entities in JSX
       "@next/next/no-page-custom-font": "off", // Disable Next.js rule for custom fonts
