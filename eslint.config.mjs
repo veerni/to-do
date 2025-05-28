@@ -13,10 +13,8 @@ const eslintConfig = [
   ...compat.config({
     extends: ("next/core-web-vitals", "next/typescript"),
     rules: {
-      "react/react-in-jsx-scope": "off", // Next.js does not require React to be in scope
-      "no-unused-vars": ["warn", { varsIgnorePattern: "^_", argsIgnorePattern: "^_" }],
-      "import/no-anonymous-default-export": "off", // Allow anonymous default exports
       "react/no-unescaped-entities": "off", // Allow unescaped entities in JSX
+      "@next/next/no-page-custom-font": "off", // Disable Next.js rule for custom fonts
     },
   }),
 ];
